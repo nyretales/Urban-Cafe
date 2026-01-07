@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>URBAN MENU</title>
+<link rel="manifest" href="manifest.json">
+<style>
+/* Tambahkan padding-bottom agar menu paling bawah tidak tertutup footer yang besar */
+body{margin:0;font-family:Arial;background:#121212;color:#fff;padding-bottom:140px}
+
+header{position:sticky;top:0;background:#121212;padding:12px;text-align:center;z-index:9}
+header img{width:60px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,.6)}
+header h1{margin:6px 0 0;font-size:25px}
+header h3{margin:6px 0 0;font-size:12px}
+
+.section-title{text-align:center;padding:10px;margin:20px 12px;border-radius:10px;font-weight:bold}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;padding:12px}
+.item{background:#1c1c1c;border-radius:12px;padding:8px;text-align:center}
+.item img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px}
+
+.qty{display:flex;justify-content:center;gap:10px;margin-top:6px}
+
+/* Tombol + dan - tetap standar */
+.qty button{background:#333;color:#fff;border:none;border-radius:6px;padding:4px 10px;font-size:14px} 
+
+/* --- AREA BAWAH DIPERBESAR --- */
+.order-bar{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#000;
+  padding:15px 20px; /* Padding lebih lega */
+  text-align:center;
+  box-sizing: border-box; /* Agar padding tidak melebarkan layar */
+  border-top: 1px solid #333;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.8);
+}
+
+/* Tulisan Total diperbesar */
+#total {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+/* Tombol WhatsApp diperbesar drastis */
+.order-bar button {
+  width: 100%; /* Tombol memenuhi lebar layar */
+  padding: 15px; /* Tombol lebih tebal/tinggi */
+  font-size: 18px; /* Tulisan di tombol besar */
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #25D366; /* Warna Hijau WA */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<header id="brand">
+  <img src="img/logo.png">
+  <h1>URBAN CAFE</h1>
+  <h3>Jl. Kopi Nikmat No. 22 Sinjai</h3>
+</header>
+
+<div id="menu"></div>
+
+<div class="order-bar">
+  <div id="total">Total: Rp 0</div>
+  <button onclick="orderWA()">ORDER VIA WHATSAPP</button>
+</div>
+
+<script src="menu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
